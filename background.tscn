@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cupsbmebhip4v"]
+[gd_scene load_steps=4 format=3 uid="uid://cupsbmebhip4v"]
 
+[ext_resource type="Script" path="res://background.gd" id="1_jnymb"]
 [ext_resource type="Texture2D" uid="uid://dxavmv7orou4p" path="res://background.png" id="1_uwemn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oaecu"]
 size = Vector2(2, 2)
 
 [node name="Node2D" type="Area2D"]
+script = ExtResource("1_jnymb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(8, 8)

@@ -1,7 +1,9 @@
-extends Area2D
+extends CharacterBody2D
 
 var health = 3
 var speed = 1
+var attack_speed_low = 3
+var attack_speed_high = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,3 +17,9 @@ func _process(delta: float) -> void:
 	if position.y >= 256:
 		position.y = -20
 	pass
+
+
+func hit():
+	health -= 1
+	if health == 0:
+		queue_free()
