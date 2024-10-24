@@ -1,0 +1,49 @@
+[gd_scene load_steps=15 format=4 uid="uid://wjnkjqqn5g0w"]
+
+[ext_resource type="Texture2D" uid="uid://b75ubft7c2er5" path="res://Background.png" id="1_jxtuh"]
+[ext_resource type="PackedScene" uid="uid://p8smfjxs7xin" path="res://platform.tscn" id="2_lafeh"]
+[ext_resource type="PackedScene" uid="uid://nilvijokovlm" path="res://MainCharacter.tscn" id="3_rx7cj"]
+[ext_resource type="PackedScene" uid="uid://becrdy3psiwtd" path="res://borderscenes/BLcorner.tscn" id="4_24bvw"]
+[ext_resource type="PackedScene" uid="uid://d4ihllo3f6i30" path="res://borderscenes/BRcorner.tscn" id="5_00qoc"]
+[ext_resource type="PackedScene" uid="uid://leyrsor5gdd2" path="res://borderscenes/Bwall.tscn" id="6_loq4j"]
+[ext_resource type="PackedScene" uid="uid://cmfwadje3v2t1" path="res://borderscenes/Lwall.tscn" id="7_wriek"]
+[ext_resource type="PackedScene" uid="uid://co8lp3c5coi40" path="res://borderscenes/Rwall.tscn" id="8_jh1eh"]
+[ext_resource type="PackedScene" uid="uid://bwnd267a588gh" path="res://borderscenes/TLcorner.tscn" id="9_bxbcn"]
+[ext_resource type="PackedScene" uid="uid://gc6xhwkrw1e0" path="res://borderscenes/TRcorner.tscn" id="10_ymdko"]
+[ext_resource type="PackedScene" uid="uid://dmcr0xi0ak0km" path="res://borderscenes/Twall.tscn" id="11_ovvgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7rnx"]
+size = Vector2(398, 247)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8i6qe"]
+resource_name = "<TileSet#-9223367491957233187>"
+scenes/1/scene = ExtResource("2_lafeh")
+scenes/2/scene = ExtResource("4_24bvw")
+scenes/3/scene = ExtResource("5_00qoc")
+scenes/4/scene = ExtResource("6_loq4j")
+scenes/5/scene = ExtResource("7_wriek")
+scenes/6/scene = ExtResource("8_jh1eh")
+scenes/7/scene = ExtResource("9_bxbcn")
+scenes/8/scene = ExtResource("10_ymdko")
+scenes/9/scene = ExtResource("11_ovvgv")
+
+[sub_resource type="TileSet" id="TileSet_r8arn"]
+sources/0 = SubResource("TileSetScenesCollectionSource_8i6qe")
+
+[node name="Node2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(200, 123.5)
+shape = SubResource("RectangleShape2D_g7rnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(200, 128)
+scale = Vector2(1, 1.024)
+texture = ExtResource("1_jxtuh")
+
+[node name="Node2D7" parent="." instance=ExtResource("3_rx7cj")]
+position = Vector2(151, 130)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAHAAsAAAAAAAAAAQADAAgAAAAAAAAAAQAHAAUAAAAAAAAAAQAMAAgAAAAAAAAAAQARAAsAAAAAAAAAAQAUAAgAAAAAAAAAAQARAAUAAAAAAAAAAQAAAA8AAAAAAAAAAgAYAA8AAAAAAAAAAwABAA8AAAAAAAAABAACAA8AAAAAAAAABAADAA8AAAAAAAAABAAEAA8AAAAAAAAABAAFAA8AAAAAAAAABAAGAA8AAAAAAAAABAAHAA8AAAAAAAAABAAIAA8AAAAAAAAABAAJAA8AAAAAAAAABAAKAA8AAAAAAAAABAALAA8AAAAAAAAABAAMAA8AAAAAAAAABAANAA8AAAAAAAAABAAOAA8AAAAAAAAABAAPAA8AAAAAAAAABAAQAA8AAAAAAAAABAARAA8AAAAAAAAABAASAA8AAAAAAAAABAATAA8AAAAAAAAABAAUAA8AAAAAAAAABAAVAA8AAAAAAAAABAAWAA8AAAAAAAAABAAXAA8AAAAAAAAABAAAAA4AAAAAAAAABQAAAA0AAAAAAAAABQAAAAwAAAAAAAAABQAAAAsAAAAAAAAABQAAAAoAAAAAAAAABQAAAAkAAAAAAAAABQAAAAgAAAAAAAAABQAAAAcAAAAAAAAABQAAAAYAAAAAAAAABQAAAAUAAAAAAAAABQAAAAQAAAAAAAAABQAAAAMAAAAAAAAABQAAAAIAAAAAAAAABQAAAAEAAAAAAAAABQAYAA4AAAAAAAAABgAYAA0AAAAAAAAABgAYAAwAAAAAAAAABgAYAAsAAAAAAAAABgAYAAoAAAAAAAAABgAYAAkAAAAAAAAABgAYAAgAAAAAAAAABgAYAAcAAAAAAAAABgAYAAYAAAAAAAAABgAYAAUAAAAAAAAABgAYAAQAAAAAAAAABgAYAAMAAAAAAAAABgAYAAIAAAAAAAAABgAYAAEAAAAAAAAABgAAAAAAAAAAAAAABwAYAAAAAAAAAAAACAABAAAAAAAAAAAACQACAAAAAAAAAAAACQADAAAAAAAAAAAACQAEAAAAAAAAAAAACQAFAAAAAAAAAAAACQAGAAAAAAAAAAAACQAHAAAAAAAAAAAACQAIAAAAAAAAAAAACQAJAAAAAAAAAAAACQAKAAAAAAAAAAAACQALAAAAAAAAAAAACQAMAAAAAAAAAAAACQANAAAAAAAAAAAACQAOAAAAAAAAAAAACQAPAAAAAAAAAAAACQAQAAAAAAAAAAAACQARAAAAAAAAAAAACQASAAAAAAAAAAAACQAVAAAAAAAAAAAACQAWAAAAAAAAAAAACQAXAAAAAAAAAAAACQATAAAAAAAAAAAACQAUAAAAAAAAAAAACQA=")
+tile_set = SubResource("TileSet_r8arn")

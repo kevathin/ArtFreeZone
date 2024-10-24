@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmfwadje3v2t1"]
+
+[ext_resource type="Texture2D" uid="uid://ds14m3crqo1g3" path="res://borderscenes/borderassets/Lwall.png" id="1_uayok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe7s5"]
+size = Vector2(10, 16)
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uayok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_xe7s5")

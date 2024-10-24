@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://becrdy3psiwtd"]
+
+[ext_resource type="Texture2D" uid="uid://dggcn45u5g683" path="res://borderscenes/borderassets/BLcorner.png" id="1_u52ov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe7s5"]
+size = Vector2(16, 10)
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u52ov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_xe7s5")
