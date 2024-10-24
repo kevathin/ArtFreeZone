@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-
+signal paint_the_world
 const SPEED = 150.0
 const JUMP_VELOCITY = -375.0
 var direction
@@ -33,4 +33,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func hit():
+	emit_signal("paint_the_world")
 	pass

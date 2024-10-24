@@ -2,6 +2,7 @@ extends Node2D
 @export var bullet_scen: PackedScene
 @export var enemy_scene: PackedScene
 @export var enemy_bullet_scene: PackedScene
+@export var paint_ball_scene: PackedScene
 signal enemy_change()
 var num_of_enemies = 0
 var level = 1
@@ -71,3 +72,10 @@ func _on_child_exiting_tree(node: Node) -> void:
 	print(node)
 	if "hit" in node:
 		num_of_enemies -= 1
+
+
+func _on_player_paint_the_world() -> void:
+	var paint_ball = paint_ball_scene.instantiate()
+	paint_ball.position = Vector2(randf_range(0,380), 0)
+	add_child(paint_ball)
+	
