@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://nilvijokovlm"]
+[gd_scene load_steps=5 format=3 uid="uid://nilvijokovlm"]
 
 [ext_resource type="Texture2D" uid="uid://ct37rbp7o2nah" path="res://pixil-frame-0.png" id="1_q6p7t"]
 [ext_resource type="Script" path="res://main_character.gd" id="1_sfc0x"]
+[ext_resource type="PackedScene" uid="uid://4y8atlngs1uq" path="res://aimer.tscn" id="3_qbkhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn5tq"]
 
@@ -13,3 +14,5 @@ shape = SubResource("RectangleShape2D_jn5tq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_q6p7t")
+
+[node name="Node2D" parent="." instance=ExtResource("3_qbkhy")]

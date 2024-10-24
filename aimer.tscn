@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://4y8atlngs1uq"]
+
+[ext_resource type="Texture2D" uid="uid://4t62313sonkl" path="res://aimer.png" id="1_es4wt"]
+[ext_resource type="Script" path="res://aimer.gd" id="1_xamw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ld50"]
+size = Vector2(20, 10)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_xamw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_5ld50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_es4wt")
