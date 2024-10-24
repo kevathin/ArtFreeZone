@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://wjnkjqqn5g0w"]
+[gd_scene load_steps=20 format=4 uid="uid://wjnkjqqn5g0w"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_26362"]
 [ext_resource type="PackedScene" uid="uid://dj71tfbqdlg88" path="res://bullet.tscn" id="2_3rcro"]
 [ext_resource type="PackedScene" uid="uid://p8smfjxs7xin" path="res://platform.tscn" id="2_lafeh"]
 [ext_resource type="PackedScene" uid="uid://bbn2g6brgs88s" path="res://enemy.tscn" id="2_qq7wl"]
 [ext_resource type="PackedScene" uid="uid://nilvijokovlm" path="res://MainCharacter.tscn" id="3_rx7cj"]
+[ext_resource type="PackedScene" uid="uid://0r6xvgx2cfy4" path="res://enemybullet.tscn" id="4_4vnal"]
 [ext_resource type="PackedScene" uid="uid://becrdy3psiwtd" path="res://borderscenes/BLcorner.tscn" id="4_24bvw"]
 [ext_resource type="PackedScene" uid="uid://d4ihllo3f6i30" path="res://borderscenes/BRcorner.tscn" id="5_00qoc"]
 [ext_resource type="PackedScene" uid="uid://leyrsor5gdd2" path="res://borderscenes/Bwall.tscn" id="6_loq4j"]
@@ -43,6 +44,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_8i6qe")
 script = ExtResource("1_26362")
 bullet_scen = ExtResource("2_3rcro")
 enemy_scene = ExtResource("2_qq7wl")
+enemy_bullet_scene = ExtResource("4_4vnal")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 scale = Vector2(0.25, 0.25)

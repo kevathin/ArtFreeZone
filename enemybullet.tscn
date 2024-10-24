@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://0r6xvgx2cfy4"]
+
+[ext_resource type="Texture2D" uid="uid://cas2gemhqqsvd" path="res://rainbow_bullet.png" id="1_pa7er"]
+[ext_resource type="Script" path="res://enemybullet.gd" id="1_x3jnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isimw"]
+size = Vector2(10, 10)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_x3jnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pa7er")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_isimw")

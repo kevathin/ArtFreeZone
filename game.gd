@@ -1,6 +1,7 @@
 extends Node2D
 @export var bullet_scen: PackedScene
 @export var enemy_scene: PackedScene
+@export var enemy_bullet_scene: PackedScene
 signal enemy_change()
 var num_of_enemies = 0
 var level = 1
@@ -8,6 +9,7 @@ var spawn_rate = 4
 var spawn_timer = 4
 var num_of_enemies_in_level = 1
 var num_of_enemies_spawned = 0
+var attack_time = 3
 var BulletReload = 2
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,7 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	attack_time = attack_time- delta
+	if attack_time <= 0:
+		attack_time = 3
+		for child in self.get_children():
+			if child.has_method("shoot"):
+				shoot(child.position.x, child.position.y)
 	spawn_timer -= delta
 	if BulletReload >= 0:
 		BulletReload -= delta
@@ -51,7 +58,15 @@ func spawn_bullets():
 	bullet.direction = (get_global_mouse_position()- $player.position).normalized()
 	add_child(bullet)
 
-
+func shoot(posx, posy):
+	var enemy_bullet = enemy_bullet_scene.instantiate()
+	var enemy_position = Vector2(posx,posy)
+	enemy_bullet.position = Vector2(posx, posy)
+	var player_position = $player.position
+	enemy_bullet.rotation_degrees = rad_to_deg(((player_position - enemy_position).normalized()).angle()) + 90
+	enemy_bullet.direction = (player_position- enemy_position).normalized()
+	add_child(enemy_bullet)
+	
 func _on_child_exiting_tree(node: Node) -> void:
 	print(node)
 	if "hit" in node:

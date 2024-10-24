@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxavmv7orou4p"
-path="res://.godot/imported/Background.png-d346e9ce37c7294bb8a0c89de5d380cd.ctex"
+uid="uid://cas2gemhqqsvd"
+path="res://.godot/imported/rainbow_bullet.png-5592371d87afc48e91372c13e2c623b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background.png"
-dest_files=["res://.godot/imported/Background.png-d346e9ce37c7294bb8a0c89de5d380cd.ctex"]
+source_file="res://rainbow_bullet.png"
+dest_files=["res://.godot/imported/rainbow_bullet.png-5592371d87afc48e91372c13e2c623b3.ctex"]
 
 [params]
 
